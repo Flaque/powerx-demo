@@ -21,14 +21,25 @@ Set up Firebase:
 
 ## Setup
 
-Install it and run:
+This project assumes you have `node` installed on your computer and are roughly familiar with the command line. If you don't, install it here: https://nodejs.org/en/. 
+
+The first time you download this, let `npm` setup your environment for you in the command line:
+
+```
+npm install
+```
+
+Then, you can run your website with:
 
 ```bash
-npm install
 npm run dev
 ```
 
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
+It will create a local version at http://localhost:3000. 
+
+## Deploying your website
+
+Don't wait to deploy your website! Do this as soon as possible before you start hacking on stuff, it'll save you a lot of time. Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
 
 ```bash
 now
