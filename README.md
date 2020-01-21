@@ -37,6 +37,9 @@ npm run dev
 
 It will create a local version at http://localhost:3000. 
 
+### Troubleshooting 
+If you get a "Error: Session secrets must be set as env vars `SESSION_SECRET_CURRENT` and `SESSION_SECRET_PREVIOUS`." error, then you haven't setup Firebase correctly! 
+
 ## Deploying your website
 
 Don't wait to deploy your website! Do this as soon as possible before you start hacking on stuff, it'll save you a lot of time. Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
