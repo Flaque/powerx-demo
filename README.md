@@ -1,25 +1,16 @@
-# Example: Firebase authentication with a serverless API
+# Example: Firebase + Nextjs
 
-## How to use
+Hey folks, apologies if this is too much to take in all at once; it's generally better to learn stuff incrementally.
 
-### Using `create-next-app`
+But to show you how easy it is to get a real thing setup, here's an entire NextJS app that's hooked up to Firebase Authentication. It just requires you to setup Firebase Auth and then launch it with [ZEIT `now`.](https://zeit.co/)
 
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
+If this overwhelms you, don't worry that's super normal. It's much easier than it initially appears. There's really only three things you need to learn here:
 
-```bash
-npx create-next-app --example with-firebase-authentication-serverless with-firebase-authentication-serverless-app
-# or
-yarn create next-app --example with-firebase-authentication-serverless with-firebase-authentication-serverless-app
-```
+- A bit of npm; (checkout this [cheatsheet](https://gist.github.com/Flaque/df4e8676c243507cdd2a69b2c3610647))
+- A little bit of React (learn this in [1h30m here](https://reactjs.org/tutorial/tutorial.html))
+- The existence of Firebase (you probably already know this)
 
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-firebase-authentication-serverless
-cd with-firebase-authentication-serverless
-```
+## Setting up or connect firebase
 
 Set up Firebase:
 
@@ -28,14 +19,13 @@ Set up Firebase:
 - Get your authentication credentials from the Firebase console under _Project settings > General> Your apps_ Add a new web app if you don't already have one. Under _Firebase SDK snippet_ choose _Config_ to get the configuration as JSON. It will include keys like `apiKey`, `authDomain` and `databaseUrl`. Set the appropriate environment variables in the `.env` file at the root of this project.
 - Set the environment variables `SESSION_SECRET_CURRENT` and `SESSION_SECRET_PREVIOUS` in the `.env` file. (These are used by [`cookie-session`](https://github.com/expressjs/cookie-session/#secret).]
 
+## Setup
+
 Install it and run:
 
 ```bash
 npm install
 npm run dev
-# or
-yarn
-yarn dev
 ```
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
@@ -45,7 +35,3 @@ now
 ```
 
 After `now` successfully deploys, a URL will for your site will be displayed. Copy that URL and navigate to your Firebase project's Authentication tab. Scroll down in the page to "Authorized domains" and add that URL to the list.
-
-## The idea behind the example
-
-This example includes Firebase authentication and serverless [API routes](https://nextjs.org/docs/api-routes/introduction). On login, the app calls `/api/login`, which stores the user's info (their decoded Firebase token) in a cookie so that it's available server-side in `getInitialProps`. On logout, the app calls `/api/logout` to destroy the cookie.
